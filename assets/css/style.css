@@ -1,3 +1,25 @@
-h1 {
-    background-color: rgb(238, 238, 173);
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Frijole&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Bubblegum Sans';
+}
+
+body{
+    background: linear-gradient(
+        #a29aea,
+        #eda7a5
+    ) 0 100% no-repeat;
+    background-size: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heading {
+    font-size: 4em;
+    color: rgb(85, 31, 129);
+    margin: 20px 0px;
 }

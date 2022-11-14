@@ -11,44 +11,51 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/sandstone/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="assets/css/style.css">
-<title>Title</title>
+<title>Knock Out!</title>
 </head>
 <body>
-    <h1>Hello World!</h1>
-    <div class="header">
-        <h1>Chania</h1>
+    <h1 class="heading">
+      <img class="logo" src="assets/images/logo.png" alt="logo">KNOCK OUT!
+    </h1>
+
+    <div class="playground">
+
+      <h2>Choose KnockOut Number:</h2>
+
+      <div class="controller">
+        <button aria-label="Player1" data-choice="0" class="control">6</button>
+        <button aria-label="Player1" data-choice="1" class="control">7</button>
+        <button aria-label="Player1" data-choice="2" class="control">8</button>
+        <button aria-label="Player1" data-choice="3" class="control">9</button>
       </div>
-      
-      <div class="row">
-        <div class="col-3 col-s-3 menu">
-          <ul>
-            <li>The Flight</li>
-            <li>The City</li>
-            <li>The Island</li>
-            <li>The Food</li>
-          </ul>
-        </div>
-      
-        <div class="col-6 col-s-9">
-          <h1>The City</h1>
-          <p>Chania is the capital of the Chania region on the island of Crete. The city can be divided in two parts, the old town and the modern city.</p>
-        </div>
-      
-        <div class="col-3 col-s-12">
-          <div class="aside">
-            <h2>What?</h2>
-            <p>Chania is a city on the island of Crete.</p>
-            <h2>Where?</h2>
-            <p>Crete is a Greek island in the Mediterranean Sea.</p>
-            <h2>How?</h2>
-            <p>You can reach Chania airport from all over Europe.</p>
-          </div>
-        </div>
+
+      <div id="result-area">
+        <p class="result">Result: <span id="result">0</span></p>
       </div>
-      
-      <div class="footer">
-        <p>Resize the browser window to see how the content respond to the resizing.</p>
+
+      <div class="image-container">
+        <img name="slide" width= "300px" height= "300px" src="./assets/images/two-dice-3.png" alt="Two dice start picture.">
+        <img name="slide" width= "300px" height= "300px" src="./assets/images/two-dice-3.png" alt="Two dice start picture.">
       </div>
+
+      <button data-type="submit" class="btn">Throw dice!</button>
+
+      <div id="result-area">
+        <p class="result">Total score: <span id="result">0</span></p>
+        <p class="result">Highest score: <span id="result">0</span></p>
+      </div>
+
+    </div>
+
+    <button data-type="reset" class="btn">Try again!</button>
+
+    <div class="footer">
+      <h3>Game rolls:</h3>
+        <p>First step is to choose the target number.</p>
+        <p>Throw the dice until you get the targeted number.</p>
+        <p>Until the targeted number is achieved the total score of the throws will be calculated.</p>
+        <p></p>
+    </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
@@ -56,5 +63,6 @@
 
 <!-- font awesome script -->
 <script src="https://kit.fontawesome.com/58d92d93b9.js" crossorigin="anonymous"></script>
+<script src="./assets/js/script.js"></script>
 </body>
 </html>
