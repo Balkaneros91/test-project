@@ -1,68 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="Description" content="I am just trying and testing"/>
-<meta name="keywords" content="test project, new, ">
-<meta name="author" content="Test Project">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Description" content="I am just trying and testing" />
+  <meta name="keywords" content="test project, new, ">
+  <meta name="author" content="Test Project">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/sandstone/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<link rel="stylesheet" href="assets/css/style.css">
-<title>Knock Out!</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/sandstone/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Knock Out!</title>
 </head>
+
 <body>
-    <h1 class="heading">
-      <img class="logo" src="assets/images/logo.png" alt="logo">KNOCK OUT!
+
+  <div class="heading">
+    <h1>
+      <i class="fa-solid fa-dice"></i> Knock Out!
     </h1>
+  </div>
 
-    <div class="playground">
+  <div class="playground">
 
-      <h2>Choose KnockOut Number:</h2>
+    <h2>Choose KnockOut Number:</h2>
 
-      <div class="controller">
-        <button aria-label="Player1" data-choice="0" class="control">6</button>
-        <button aria-label="Player1" data-choice="1" class="control">7</button>
-        <button aria-label="Player1" data-choice="2" class="control">8</button>
-        <button aria-label="Player1" data-choice="3" class="control">9</button>
-      </div>
-
-      <div id="result-area">
-        <p class="result">Result: <span id="result">0</span></p>
-      </div>
-
-      <div class="image-container">
-        <img name="slide" width= "300px" height= "300px" src="./assets/images/two-dice-3.png" alt="Two dice start picture.">
-        <img name="slide" width= "300px" height= "300px" src="./assets/images/two-dice-3.png" alt="Two dice start picture.">
-      </div>
-
-      <button data-type="submit" class="btn">Throw dice!</button>
-
-      <div id="result-area">
-        <p class="result">Total score: <span id="result">0</span></p>
-        <p class="result">Highest score: <span id="result">0</span></p>
-      </div>
-
+    <div class="controller">
+      <button aria-label="Choice1" data-choice="0" class="btn" id="control">6</button>
+      <button aria-label="Choice2" data-choice="1" class="btn" id="control">7</button>
+      <button aria-label="Choice3" data-choice="2" class="btn" id="control">8</button>
+      <button aria-label="Choice4" data-choice="3" class="btn" id="control">9</button>
     </div>
 
-    <button data-type="reset" class="btn">Try again!</button>
-
-    <div class="footer">
-      <h3>Game rolls:</h3>
-        <p>First step is to choose the target number.</p>
-        <p>Throw the dice until you get the targeted number.</p>
-        <p>Until the targeted number is achieved the total score of the throws will be calculated.</p>
-        <p></p>
+    <div class="image-container">
+      <img src="./assets/images/two-dice-3.png" alt="Two dice start picture.">
+      <img src="./assets/images/two-dice-3.png" alt="Two dice start picture.">
     </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <div>
+      <button data-type="submit" class="btn btn-throw">Throw dice!</button>
+    </div>
 
-<!-- font awesome script -->
-<script src="https://kit.fontawesome.com/58d92d93b9.js" crossorigin="anonymous"></script>
-<script src="./assets/js/script.js"></script>
+    <div class="result-area">
+      <p class="round-result">Result: <span id="round-result">0</span></p>
+      <p class="tot-score">Total score: <span id="total-score">0</span></p>
+      <p class="hi-score">Highest score: <span id="high-score">0</span></p>
+    </div>
+
+    <div>
+      <button data-type="reset" class="btn">Try again!</button>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <h2>Game rolls:</h2>
+    <ol class="rolls">
+      <li>First step is to choose the target number.</li>
+      <li>Throw the dice until you get the targeted number.</li>
+      <li>Until the targeted number is achieved the total score of the throws will be calculated.</li>
+      <li></li>
+    </ol>
+  </div>
+
+  <!-- font awesome script -->
+  <script src="https://kit.fontawesome.com/58d92d93b9.js" crossorigin="anonymous"></script>
+
+  <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
