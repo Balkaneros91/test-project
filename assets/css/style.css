@@ -19,7 +19,7 @@ h1 {
     font-size: 70px;
     margin: 0px;
     letter-spacing: 4px;
-    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-width: 1.5px;
     -webkit-text-stroke-color: #fff;
 }
 
@@ -84,6 +84,7 @@ i {
     margin: 30px;
 }
 
+/* images */
 img {
     width: 300px;
     height: 300px;
@@ -92,17 +93,18 @@ img {
     border-radius: 5px;
 }
 
+/* result area */
+.result-area {
+    border-bottom: 2px solid #13315C;
+    padding-top: 20px;
+}
+
 p {
     color: #13315C;
     font-size: 20px;
     margin: 45px;
     padding: 18px;
     display: inline;
-}
-
-.result-area {
-    border-bottom: 2px solid #13315C;
-    padding-top: 20px;
 }
 
 span {
