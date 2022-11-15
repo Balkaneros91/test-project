@@ -83,11 +83,16 @@ span {
 }
 
 .footer > h2 {
-    text-align: left;
+    color: rgb(219 69 82);
+}
+
+.footer > ol {
+    text-align: center;
+    list-style-position: inside;
+    padding: 10px;
 }
 
 li {
     font-size: 15px;
-    text-align: left;
     letter-spacing: 1px;
 }
