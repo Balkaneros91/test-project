@@ -12,22 +12,33 @@ body {
     background-color: #13315C;
     color: rgb(219 69 82);
     padding: 20px;
-    text-transform: uppercase;
+    border: 2px solid #fff;
 }
 
 h1 {
-    font-size: 50px;
+    font-size: 70px;
     margin: 0px;
     letter-spacing: 4px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #fff;
 }
 
 i {
     padding-right: 10px;
+    color: #fff;
+    font-size: 90px;
 }
 
 /* playground */
 
-h2 {
+.playground {
+    border-bottom: 2px solid #13315C;
+    border-top: 2px solid #13315C;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #fff;
+}
+
+.playground > h2 {
     color: #13315C;
     font-size: 23px;
     margin: 0px;
@@ -41,6 +52,15 @@ h2 {
 .controller > .btn {
     font-size: 25px;
     padding: 15px;
+    color: #fff;
+}
+
+.controller > .btn:hover {
+    font-size: 28px;
+    padding: 16px;
+    color: #fff;
+    background-color: rgb(219 69 82);
+    border: 2px solid #fff;
 }
 
 .btn {
@@ -49,24 +69,33 @@ h2 {
     text-transform: capitalize;
     font-size: 20px;
     border-radius: 5px;
-    color: rgb(219 69 82);
+    color: #fff;
     background: #13315C;
-    border: 2px solid rgb(219 69 82);
+    border: 2px solid #fff;
+}
+
+.btn:hover {
+    color: #fff;
+    background-color: rgb(219 69 82);
+    border: 2px solid #fff;
+}
+
+.btn-reset {
+    margin: 30px;
 }
 
 img {
     width: 300px;
     height: 300px;
-    padding: 10px;
     margin: 10px;
-    border: 1px solid #13315C;
+    border: 1px solid #fff;
     border-radius: 5px;
 }
 
 p {
     color: #13315C;
     font-size: 20px;
-    margin: 10px;
+    margin: 45px;
     padding: 18px;
     display: inline;
 }
@@ -78,19 +107,24 @@ p {
 
 span {
    color: rgb(219 69 82);
+   margin-left: 10px;
 }
-
 
 /* footer and rolls */
 .footer {
     background-color: #13315C;
-    color: #8DA9C4;
+    color: #fff;
     padding: 10px;
+    border: 2px solid #fff;
 }
 
 .footer > h2 {
-    color: rgb(219 69 82);
-    text-decoration: underline;
+    color: #fff;
+    padding: 10px;
+}
+
+.footer h2 > i {
+    font-size: 25px;
 }
 
 .footer > ol {
