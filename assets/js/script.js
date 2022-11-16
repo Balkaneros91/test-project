@@ -13,10 +13,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 let targNr = this.getElementsByClassName('btn');
                 /* console.log(targNr); */
                 alert(`You picked the target number!`);
-
+                /* rollDice(); */
+                
                 /*(this.getAttribute('data-type') === 'number'); { */
                    /* alert('You picked the target number'); */
-                    /* rollDice(); */
+                    
                 }
             }
 )};
