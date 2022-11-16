@@ -11,7 +11,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/sandstone/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
   <title>Knock Out!</title>
 </head>
 
@@ -34,13 +34,15 @@
       <button aria-label="Choice4" data-choice="3" class="btn" id="control">9</button>
     </div>
 
-    <div class="image-container">
-      <img src="./assets/images/two-dice.png" alt="Two dice start picture.">
-      <img src="./assets/images/two-dice.png" alt="Two dice start picture.">
-    </div>
+    <div class="container">
+      <div class="dice-wrapper">
+        <img id="die-1">
+        <img id="die-2">
+      </div>
 
-    <div>
-      <button data-type="submit" class="btn btn-throw">Roll the dice!</button>
+      <div>
+        <button onclick="roll()" data-type="submit" class="btn btn-throw">Roll the dice!</button>
+      </div>
     </div>
 
     <div class="result-area">
@@ -61,7 +63,8 @@
       <li>First step is to choose the target number.</li>
       <li>Throw the dice until you get the targeted number.</li>
       <li>Until the targeted number is achieved the total score of the throws will be calculated.</li>
-      <li>Once targeted number is thrown the game is over and the highest score achieved will be monitored in the last route of the score area.</li>
+      <li>Once targeted number is thrown the game is over and the highest score achieved will be monitored in the last
+        route of the score area.</li>
       <li>The game is ON until you hit the Reset button which will be reseting the game to zero.</li>
     </ol>
   </div>

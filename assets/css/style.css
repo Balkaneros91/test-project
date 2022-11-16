@@ -74,6 +74,21 @@ i {
     border: 2px solid #fff;
 }
 
+.shake {
+    animation: shake 0.5s infinite;
+}
+@keyframes shake {
+    0% {
+        transform: rotate(8deg);
+    }
+    50% {
+        transform: rotate(-8deg);
+    }
+    100% {
+        transform: rotate(8deg);
+    }
+}
+
 .btn:hover {
     color: #fff;
     background-color: rgb(219 69 82);
