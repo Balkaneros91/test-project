@@ -10,13 +10,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 alert('GAME OVER - GAME RESET!');
                 /* resetGame(); */
             } else {
-                (this.getAttribute('data-type') === 'number'); {
-                    alert('You picked the target number');
+                let targNr = this.getElementsByClassName('btn');
+                /* console.log(targNr); */
+                alert(`You picked the target number!`);
+
+                /*(this.getAttribute('data-type') === 'number'); { */
+                   /* alert('You picked the target number'); */
                     /* rollDice(); */
                 }
             }
-        });
-    }
+)};
 });
 
     /*
