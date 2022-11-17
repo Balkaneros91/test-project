@@ -1,6 +1,10 @@
-let result = 0;
+let result = document.getElementById('round-result').value;;
 let targNr = document.getElementById('targ-Nr').value;
 let chances = document.getElementById('chances').innerText;
+
+let dice = document.querySelectorAll('img');
+/* console.log(dice); */
+
 
 document.addEventListener('DOMContentLoaded', function () {
     let buttons = document.getElementsByTagName('button');
@@ -18,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 let targNr = this.getAttribute('data-choice');
                 /* console.log(targNr); */
                 /* alert(`You picked the target number ${targNr}!`); */
-                document.querySelector("#targ-Nr").innerHTML = `You choosen number  ${targNr}! Let's play :)`;
+                document.getElementById("targ-Nr").innerHTML = `You choosen number  ${targNr}! Let's play :)`;
                 document.getElementById("roll").disabled = false;
             }
         });
@@ -27,14 +31,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-
-let dice = document.querySelectorAll('img');
-/* console.log(dice); */
-
 /**
  * 
  */
-function rollDice() {
+function rollDice(targNr) {
     dice.forEach(function (die) {
         die.classList.add("shake");
     });
@@ -51,30 +51,30 @@ function rollDice() {
 
             document.querySelector("#die1").setAttribute("src", firstDiceImage);
             document.querySelector("#die2").setAttribute("src", secondDiceImage);
-            document.querySelector("#round-result").innerHTML = "Your roll is " + ((dieOneValue) + (dieTwoValue));
+            document.querySelector("#round-result").innerHTML = "Your thrown " + ((dieOneValue) + (dieTwoValue));
             result = document.getElementById('round-result').value;
         },
-        2000
+        1000
     );
 }
 
 /**
  * Gets the outcome of the throw 
  */
-function checkOutcome() {
+ function checkOutcome() {
     let userThrow = parseInt(document.getElementById('round-result').value);
     /*console.log('userThrow');*/
     /*let calculateDice = checkOutcome();*/
-    let isMatch = userThrow === result;
-    let isNotMatch = userThrow !== result;
+    let isMatch = userThrow === targNr;
+    let isNotMatch = userThrow !== targNr;
 
-    if (isMatch === targNr) {
+    if (isMatch) {
         alert(`You throw ${targNr}! Congrats it's a match, reset and play again! :D`);
-    } else if (isNotMatch !== targNr) {
-        alert(`It's not a match. You have ${chances - 1} left!`);
+    } else if (isNotMatch) {
+        /*alert(`It's not a match. You have ${chances - 1} left!`);*/
         decrementChances();
     } else {
-        (chances === result);
+        (chances <= 0);
         alert("You run out chances, reset and play again!");
     }
 
@@ -89,10 +89,7 @@ function decrementChances() {
     chances = parseInt(document.getElementById('chances').innerText);
     document.getElementById('chances').innerText = --chances;
 
-    /*for (let i = 0; i <= 5; i--)*/
 }
-
-
 
 
 /*
