@@ -28,16 +28,17 @@
     <h2>Choose KnockOut Number:</h2>
 
     <div class="controller">
-      <button aria-label="Choice1" data-type="number" class="btn" id="control">6</button>
-      <button aria-label="Choice2" data-type="number" class="btn" id="control">7</button>
-      <button aria-label="Choice3" data-type="number" class="btn" id="control">8</button>
-      <button aria-label="Choice4" data-type="number" class="btn" id="control">9</button>
+      <button aria-label="Choice1" data-choice="6" class="btn" id="control">6</button>
+      <button aria-label="Choice2" data-choice="7" class="btn" id="control">7</button>
+      <button aria-label="Choice3" data-choice="8" class="btn" id="control">8</button>
+      <button aria-label="Choice4" data-choice="9" class="btn" id="control">9</button>
+      <p class="control-number">Targeted number: <span id="targ-Nr">0</span></p>
     </div>
 
     <div class="container">
       <div class="dice-wrapper">
-        <img src="assets/images/logodice.png" id="die-1">
-        <img src="assets/images/logodice.png" id="die-2">
+        <img id="die1" src="assets/images/...">
+        <img id="die2" src="assets/images/...">
       </div>
 
       <div>
@@ -47,7 +48,7 @@
 
     <div class="result-area">
       <p class="round-result">Result: <span id="round-result">0</span></p>
-      <p class="tot-score">Rolling chances: <span id="total-score">5 of 5</span></p>
+      <p class="chance">Rolling chances: <span id="chances">5 of 5</span></p>
       <p id="target-achieved"></p>
     </div>
 
