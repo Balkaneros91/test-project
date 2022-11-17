@@ -151,3 +151,7 @@ li {
     font-size: 15px;
     letter-spacing: 1px;
 }
+
+.hide {
+    display: none;
+}

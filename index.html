@@ -32,23 +32,23 @@
       <button aria-label="Choice2" data-choice="7" class="btn" id="control">7</button>
       <button aria-label="Choice3" data-choice="8" class="btn" id="control">8</button>
       <button aria-label="Choice4" data-choice="9" class="btn" id="control">9</button>
-      <p class="control-number">Targeted number: <span id="targ-Nr">0</span></p>
+      <p class="control-number">KnockOut number: <span id="targ-Nr"></span></p>
     </div>
 
     <div class="container">
-      <div class="dice-wrapper">
-        <img id="die1" src="assets/images/...">
-        <img id="die2" src="assets/images/...">
+      <div class="dice-wrapper" id="dice-wrapper">
+        <img id="die1" src="assets/images/dice1.png">
+        <img id="die2" src="assets/images/dice1.png">
       </div>
 
       <div>
-        <button /*onclick="roll()"*/ data-type="submit" class="btn btn-throw">Roll the dice!</button>
+        <button data-type="submit" class="btn btn-throw" disabled id="roll">Roll the dice!</button>
       </div>
     </div>
 
     <div class="result-area">
       <p class="round-result">Result: <span id="round-result">0</span></p>
-      <p class="chance">Rolling chances: <span id="chances">5 of 5</span></p>
+      <p class="chance">Rolling chances: <span id="chances">5</span><span>of 5</span></p>
       <p id="target-achieved"></p>
     </div>
 
