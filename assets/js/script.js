@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
 /**
  * 
  */
-function rollDice(targNr) {
+function rollDice() {
     dice.forEach(function (die) {
         die.classList.add("shake");
     });
@@ -61,12 +61,12 @@ function rollDice(targNr) {
 /**
  * Gets the outcome of the throw 
  */
- function checkOutcome() {
-    let userThrow = parseInt(document.getElementById('round-result').value);
+function checkOutcome() {
+    result = parseInt(document.getElementById('round-result').value);
     /*console.log('userThrow');*/
     /*let calculateDice = checkOutcome();*/
-    let isMatch = userThrow === targNr;
-    let isNotMatch = userThrow !== targNr;
+    let isMatch = result === targNr;
+    let isNotMatch = result !== targNr;
 
     if (isMatch) {
         alert(`You throw ${targNr}! Congrats it's a match, reset and play again! :D`);
@@ -74,11 +74,12 @@ function rollDice(targNr) {
         /*alert(`It's not a match. You have ${chances - 1} left!`);*/
         decrementChances();
     } else {
-        (chances <= 0);
+        (result = 0);
         alert("You run out chances, reset and play again!");
     }
 
     /*rollDice(); */
+
 }
 
 /**
@@ -88,8 +89,9 @@ function decrementChances() {
 
     chances = parseInt(document.getElementById('chances').innerText);
     document.getElementById('chances').innerText = --chances;
-
 }
+
+
 
 
 /*
