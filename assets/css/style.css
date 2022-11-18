@@ -108,6 +108,11 @@ img {
     border-radius: 5px;
 }
 
+#message {
+    font-size: 20px;
+    color: rgb(219 69 82);
+}
+
 /* result area */
 .result-area {
     border-bottom: 2px solid #13315C;

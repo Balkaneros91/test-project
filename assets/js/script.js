@@ -1,9 +1,4 @@
-let calculatedSum = document.getElementById('round-result').value;;
-let targNr = document.getElementById('targ-Nr').value;
-let chances = document.getElementById('chances').innerText;
-
 let dice = document.querySelectorAll('img');
-/* console.log(dice); */
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -12,29 +7,130 @@ document.addEventListener('DOMContentLoaded', function () {
     for (let button of buttons) {
         button.addEventListener('click', function () {
             if (this.getAttribute('data-type') === 'submit') {
-                /* alert('You roll the dice!'); */
                 rollDice();
+            } else if (this.getAttribute('data-type') === 'reset') {
+                window.location.reload(true);
+            } else {
+                let targNr = this.getAttribute('data-choice');
+                document.getElementById("targ-Nr").innerHTML = targNr;
+                document.getElementById("roll").disabled = false;
+            }
+        });
+    }
+});
+
+
+function rollDice() {
+    dice.forEach(function (die) {
+        die.classList.add("shake");
+    });
+
+
+    let dieOneValue = Math.floor(Math.random() * 6) + 1;
+    let firstDiceImage = "assets/images/dice" + dieOneValue + ".png";
+    let dieTwoValue = Math.floor(Math.random() * 6) + 1;
+    let secondDiceImage = "assets/images/dice" + dieTwoValue + ".png";
+
+    document.querySelector("#die1").setAttribute("src", firstDiceImage);
+    document.querySelector("#die2").setAttribute("src", secondDiceImage);
+
+    setTimeout(function () {
+        dice.forEach(function (die) {
+            die.classList.remove("shake");
+        });
+
+    },
+        500
+    );
+    document.querySelector("#round-result").innerHTML = ((dieOneValue) + (dieTwoValue));
+    checkOutcome();
+
+}
+
+
+function checkOutcome() {
+
+    let result = parseInt(document.getElementById('round-result').textContent);
+    let targNr = parseInt(document.getElementById('targ-Nr').textContent);
+
+    let gameOver = parseInt(document.getElementById('chances').textContent)
+    gameOver === 0;
+
+    let isMatch = result === targNr;
+    /*console.log({ isMatch, result, targNr });*/
+
+    if (isMatch) {
+        document.getElementById('message').textContent = targNr;
+        /*alert(`You throw ${targNr}! Congrats it's a match, reset and play again! :D`);*/
+    } else if (!isMatch) {
+        /*alert(`It's not a match. You have ${chances - 1} left!`);*/
+        decrementChances();
+    } else if (gameOver) {
+        alert("You run out chances, reset and play again!");
+    } else {
+        alert("Hi there!");
+    }
+}
+
+function decrementChances() {
+
+    chances = parseInt(document.getElementById('chances').innerText);
+    document.getElementById('chances').innerText = --chances;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+let calculatedSum = document.getElementById('round-result').value;
+let targNr = document.getElementById('targ-Nr').value;
+let chances = document.getElementById('chances').innerText;
+
+let dice = document.querySelectorAll('img');
+/* console.log(dice); */
+
+/*
+
+document.addEventListener('DOMContentLoaded', function () {
+    let buttons = document.getElementsByTagName('button');
+
+    for (let button of buttons) {
+        button.addEventListener('click', function () {
+            if (this.getAttribute('data-type') === 'submit') {
+                /* alert('You roll the dice!'); */
+/*                rollDice();
                 checkOutcome();
             } else if (this.getAttribute('data-type') === 'reset') {
                 /* alert('GAME OVER - GAME RESET!'); */
-                window.location.reload(true);
+/*                window.location.reload(true);
             } else {
                 let targNr = this.getAttribute('data-choice');
                 /* console.log(targNr); */
                 /* alert(`You picked the target number ${targNr}!`); */
-                document.getElementById("targ-Nr").innerHTML = `You choosen number  ${targNr}! Let's play :)`;
+/*                document.getElementById("targ-Nr").innerHTML = `You choosen number  ${targNr}! Let's play :)`;
                 document.getElementById("roll").disabled = false;
             }
         });
     }
     /*rollDice('6');*/
 
-});
+/* });
 
 /**
  * 
  */
-function rollDice() {
+/*function rollDice() {
     dice.forEach(function (die) {
         die.classList.add("shake");
     });
@@ -49,12 +145,12 @@ function rollDice() {
             let secondDiceImage = "assets/images/dice" + dieTwoValue + ".png";
             /*console.log(dieOneValue, dieTwoValue);*/
 
-            document.querySelector("#die1").setAttribute("src", firstDiceImage);
+/*            document.querySelector("#die1").setAttribute("src", firstDiceImage);
             document.querySelector("#die2").setAttribute("src", secondDiceImage);
             document.querySelector("#round-result").innerHTML = "Your thrown " + ((dieOneValue) + (dieTwoValue));
             /*result = document.getElementById('round-result').value;*/
 
-        },
+/*        },
         1000
     );
 }
@@ -63,58 +159,60 @@ function rollDice() {
 /**
  * Gets the outcome of the throw 
  */
-function checkOutcome() {
-    if (calculatedSum === targNr) {
-        document.getElementById("message").innerHTML = "You Won!";
-    }
+/*function checkOutcome() {
 
-    else if (calculatedSum !== targNr) {
-        document.getElementById("message").innerHTML = "Roll again!!";
-        decrementChances();
-    }
-
-    else if (chances === 0) {
-        document.getElementById("message").innerHTML = "You RunOut chances!";
-    }
-
-    else {
-        document.querySelector("message").innerHTML = "Hello, there";
-    }
-}
-
-
-
-/*
-    let result = parseInt(document.getElementById('round-result').value);
-    /*console.log('userThrow');*/
-    
-    /*let isMatch = result === targNr;
-    let isNotMatch = result !== targNr;
+/*    let isMatch = targNr === calculatedSum;
+    let isNotMatch = targNr !== calculatedSum;
+    let endGame === chances[0];
 
     if (isMatch) {
+        document.getElementById("message").innerHTML = "You Won!!";
         alert(`You throw ${targNr}! Congrats it's a match, reset and play again! :D`);
-    } else if (isNotMatch) {
-        /*alert(`It's not a match. You have ${chances - 1} left!`);*/
-        /*decrementChances();
+    } else if (isNotMatch); {
+        document.getElementById("message").innerHTML = "Roll again!!";
+        alert(`It's not a match. You have ${chances - 1} left!`);
+        decrementChances()
+    } else if (endGame); {
+        document.getElementById("message").innerHTML = "You RunOut chances!";
+        alert('Try again!');
+    } else {
+        alert('Hello there!')
+    }
+}
+*/
+
+/*
+
+let result = parseInt(document.getElementById('round-result').value);
+    /*console.log('userThrow');*/
+/*
+let isMatch = result === targNr;
+let isNotMatch = result !== targNr;
+
+if (isMatch) {
+    alert(`You throw ${targNr}! Congrats it's a match, reset and play again! :D`);
+} else if (isNotMatch) {
+    /*alert(`It's not a match. You have ${chances - 1} left!`);*/
+/*decrementChances();
     } else {
         (chances = 0);
         alert("You run out chances, reset and play again!");
     }
-*/
-    /*rollDice(); */
+
+/*rollDice();
 
 
 
 /**
  * Gets the total number of throws until the game ends
  */
+/*
 function decrementChances() {
 
     chances = parseInt(document.getElementById('chances').innerText);
     document.getElementById('chances').innerText = --chances;
+
 }
-
-
 
 
 /*
