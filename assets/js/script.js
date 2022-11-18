@@ -1,4 +1,4 @@
-let result = document.getElementById('round-result').value;;
+let calculatedSum = document.getElementById('round-result').value;;
 let targNr = document.getElementById('targ-Nr').value;
 let chances = document.getElementById('chances').innerText;
 
@@ -52,35 +52,58 @@ function rollDice() {
             document.querySelector("#die1").setAttribute("src", firstDiceImage);
             document.querySelector("#die2").setAttribute("src", secondDiceImage);
             document.querySelector("#round-result").innerHTML = "Your thrown " + ((dieOneValue) + (dieTwoValue));
-            result = document.getElementById('round-result').value;
+            /*result = document.getElementById('round-result').value;*/
+
         },
         1000
     );
 }
 
+
 /**
  * Gets the outcome of the throw 
  */
 function checkOutcome() {
-    result = parseInt(document.getElementById('round-result').value);
+    if (calculatedSum === targNr) {
+        document.getElementById("message").innerHTML = "You Won!";
+    }
+
+    else if (calculatedSum !== targNr) {
+        document.getElementById("message").innerHTML = "Roll again!!";
+        decrementChances();
+    }
+
+    else if (chances === 0) {
+        document.getElementById("message").innerHTML = "You RunOut chances!";
+    }
+
+    else {
+        document.querySelector("message").innerHTML = "Hello, there";
+    }
+}
+
+
+
+/*
+    let result = parseInt(document.getElementById('round-result').value);
     /*console.log('userThrow');*/
-    /*let calculateDice = checkOutcome();*/
-    let isMatch = result === targNr;
+    
+    /*let isMatch = result === targNr;
     let isNotMatch = result !== targNr;
 
     if (isMatch) {
         alert(`You throw ${targNr}! Congrats it's a match, reset and play again! :D`);
     } else if (isNotMatch) {
         /*alert(`It's not a match. You have ${chances - 1} left!`);*/
-        decrementChances();
+        /*decrementChances();
     } else {
-        (result = 0);
+        (chances = 0);
         alert("You run out chances, reset and play again!");
     }
-
+*/
     /*rollDice(); */
 
-}
+
 
 /**
  * Gets the total number of throws until the game ends

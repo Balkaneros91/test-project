@@ -19,26 +19,30 @@
 
   <div class="heading">
     <h1>
-      Knock Out <i class="fa-solid fa-dice"></i>
+      Roll The Dice <i class="fa-solid fa-dice"></i>
     </h1>
   </div>
 
   <div class="playground">
 
-    <h2>Choose KnockOut Number:</h2>
+    <h2>Choose Target Number:</h2>
 
     <div class="controller">
       <button aria-label="Choice1" data-choice="6" class="btn" id="control">6</button>
       <button aria-label="Choice2" data-choice="7" class="btn" id="control">7</button>
       <button aria-label="Choice3" data-choice="8" class="btn" id="control">8</button>
       <button aria-label="Choice4" data-choice="9" class="btn" id="control">9</button>
-      <p class="control-number">KnockOut number: <span id="targ-Nr"></span></p>
+      <p class="control-number">Targeted number: <span id="targ-Nr"></span></p>
     </div>
 
     <div class="container">
       <div class="dice-wrapper" id="dice-wrapper">
         <img id="die1" src="assets/images/dice1.png">
         <img id="die2" src="assets/images/dice1.png">
+      </div>
+
+      <div>
+        <span class="win-lose-message" id="message"></span>
       </div>
 
       <div>
@@ -62,10 +66,10 @@
     <h2>Game instructions <i class="fa-solid fa-dice"></i></h2>
     <ol class="instructions">
       <li>First step is to choose the target number.</li>
-      <li>Throw the dice until you get the targeted number.</li>
-      <li>Until the targeted number is achieved the total score of the throws will be calculated.</li>
-      <li>Once targeted number is thrown the game is over.</li>
-      <li>The game is ON until you hit the Reset button which will be reseting the game to zero.</li>
+      <li>Second step is to roll the dice. You have 5 throws in total.</li>
+      <li>In case the targeted number is thrown you win.</li>
+      <li>In case you do not roll the targeted number in 5 throws you lose.</li>
+      <li>By pressing the Reset button you can reset the game to zero and play again!</li>
     </ol>
   </div>
 
