@@ -2,81 +2,71 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="Description" content="I am just trying and testing" />
-  <meta name="keywords" content="test project, new, ">
-  <meta name="author" content="Test Project">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Roll the dice, fun game for everyone">
+    <meta name="keywords" content="rolling dice, game, fun">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/sandstone/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <title>Knock Out!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/sandstone/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Roll the dice!</title>
 </head>
 
 <body>
-
-  <div class="heading">
-    <h1>
-      Roll The Dice <i class="fa-solid fa-dice"></i>
-    </h1>
-  </div>
-
-  <div class="playground">
-
-    <h2>Choose Target Number:</h2>
-
-    <div class="controller">
-      <button aria-label="Choice1" data-choice="6" class="btn" id="control">6</button>
-      <button aria-label="Choice2" data-choice="7" class="btn" id="control">7</button>
-      <button aria-label="Choice3" data-choice="8" class="btn" id="control">8</button>
-      <button aria-label="Choice4" data-choice="9" class="btn" id="control">9</button>
-      <p class="control-number">Targeted number: <span id="targ-Nr"></span></p>
+    <div class="heading">
+        <h1>Roll The Dice <i class="fa-solid fa-dice"></i></h1>
     </div>
 
-    <div class="container">
-      <div class="dice-wrapper" id="dice-wrapper">
-        <img id="die1" src="assets/images/dice1.png">
-        <img id="die2" src="assets/images/dice1.png">
-      </div>
+    <div class="playground">
+        <h2>Choose Target Number:</h2>
 
-      <div>
-        <span class="win-lose-message" id="message"></span>
-      </div>
+        <div class="controller">
+            <button aria-label="Choice1" data-choice="6" class="btn" id="control-6">6</button>
+            <button aria-label="Choice2" data-choice="7" class="btn" id="control-7">7</button>
+            <button aria-label="Choice3" data-choice="8" class="btn" id="control-8">8</button>
+            <button aria-label="Choice4" data-choice="9" class="btn" id="control-9">9</button>
+            <p class="control-number">Targeted number: You choose the number <span id="targ-Nr">0</span> &nbsp;! Let's play :)</p>
+        </div>
 
-      <div>
-        <button data-type="submit" class="btn btn-throw" disabled id="roll">Roll the dice!</button>
-      </div>
+        <div class="container">
+            <div class="dice-wrapper" id="dice-wrapper">
+                <img id="die1" src="assets/images/dice1.png" alt="Dice image">
+                <img id="die2" src="assets/images/dice1.png" alt="Dice image">
+            </div>
+            <div>
+                <span class="win-lose-message" id="message"></span>
+            </div>
+            <div>
+                <button data-type="submit" class="btn" disabled id="roll">Roll the dice!</button>
+            </div>
+        </div>
+        <div class="result-area">
+            <p class="round-result">Result: You thrown <span id="round-result"></span></p>
+            <p class="chance">Rolling chances: <span id="chances">5</span><span>of 5</span></p>
+            <p id="target-achieved"></p>
+        </div>
+        <div>
+            <button data-type="reset" class="btn btn-reset">Reset the game!</button>
+        </div>
     </div>
 
-    <div class="result-area">
-      <p class="round-result">Result: <span id="round-result"></span></p>
-      <p class="chance">Rolling chances: <span id="chances">5</span><span>of 5</span></p>
-      <p id="target-achieved"></p>
+    <div class="footer">
+        <h2>Game instructions <i class="fa-solid fa-dice"></i></h2>
+        <ol class="instructions">
+            <li>First step is to choose the target number.</li>
+            <li>Second step is to roll the dice. You have 5 throws in total.</li>
+            <li>If the targeted number is thrown you win.</li>
+            <li>And if the targeted number is not rolled in 5 throws it's a game over.</li>
+            <li>By pressing the Reset button you can reset the game to zero and play again!</li>
+        </ol>
     </div>
 
-    <div>
-      <button data-type="reset" class="btn btn-reset">Reset the game!</button>
-    </div>
+    <!-- font awesome script -->
+    <script src="https://kit.fontawesome.com/58d92d93b9.js" crossorigin="anonymous"></script>
 
-  </div>
-
-  <div class="footer">
-    <h2>Game instructions <i class="fa-solid fa-dice"></i></h2>
-    <ol class="instructions">
-      <li>First step is to choose the target number.</li>
-      <li>Second step is to roll the dice. You have 5 throws in total.</li>
-      <li>If the targeted number is thrown you win.</li>
-      <li>And if the targeted number is not rolled in 5 throws you lose.</li>
-      <li>By pressing the Reset button you can reset the game to zero and play again!</li>
-    </ol>
-  </div>
-
-  <!-- font awesome script -->
-  <script src="https://kit.fontawesome.com/58d92d93b9.js" crossorigin="anonymous"></script>
-
-  <script src="assets/js/script.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>

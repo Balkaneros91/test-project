@@ -109,7 +109,7 @@ img {
 }
 
 #message {
-    font-size: 20px;
+    font-size: 40px;
     color: rgb(219 69 82);
 }
 
@@ -129,7 +129,7 @@ span {
    margin-left: 10px;
 }
 
-/* footer and rolls */
+/* footer and rules */
 .footer {
     background-color: #13315C;
     color: #fff;
@@ -157,3 +157,18 @@ li {
     letter-spacing: 1px;
 }
 
+@media screen and (max-width: 450px) {
+
+    img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 250px) {
+
+    img {
+        width: 100px;
+        height: 100px;
+    }
+}
