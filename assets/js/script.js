@@ -91,7 +91,7 @@ function decrementChances() {
 
     if (chances === 0) {
         document.getElementById("roll").disabled = true;
-        document.getElementById('message').textContent = ('Game Over!');
+        document.getElementById('message').textContent = ('You lost! Game Over!');
     } else {
         /*alert('roll again!')*/
     }
