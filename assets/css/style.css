@@ -157,18 +157,32 @@ li {
     letter-spacing: 1px;
 }
 
-@media screen and (max-width: 450px) {
-
-    img {
-        width: 200px;
-        height: 200px;
-    }
-}
+/* media queries */
 
 @media screen and (max-width: 250px) {
 
     img {
         width: 100px;
         height: 100px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    h1 {
+        font-size: 50px;
+    }
+
+    img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media screen and (max-width: 920px) {
+
+    img {
+        width: 150px;
+        height: 150px;
     }
 }
